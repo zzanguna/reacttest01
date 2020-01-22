@@ -1,4 +1,6 @@
-
+import React from 'react';
+import ReactDOM from 'react-dom';//react 코드를 웹에다가 붙여주는 코드
+import './index.css';
 
 const e = React.createElement;
 class LikeButton extends React.Component{
