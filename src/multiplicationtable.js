@@ -18,12 +18,11 @@ class GuGuDan extends React.Component{
     //메소드를 만들어 준다.
     onSubmit = (e) => {
         e.preventDefault();
-        var resultevale = this.state.value;
         if(parseInt(this.state.value) === this.state.first * this.state.second){
             this.setState({
                 first : Math.ceil(Math.random() * 9),
                 second : Math.ceil(Math.random() * 9),
-                resultval : resultevale,
+                resultval : this.state.value,
                 value:'',
                 result: '정답'
             })
@@ -31,7 +30,8 @@ class GuGuDan extends React.Component{
         else {
             this.setState({
                 value:'',
-                result: '땡'
+                result: '땡',
+                resultval:''
             })
         }
     };
