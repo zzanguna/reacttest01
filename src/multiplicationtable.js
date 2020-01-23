@@ -17,7 +17,11 @@ const GuGuDan = () => {
     const  onSubmitForm = (e) => {
         e.preventDefault();
         if(parseInt(value) === first * second){
-            setResult("정답 : " + value);
+            // setResult("정답 : " + value);
+            //setdata를 할때 setState처럼 함수르 사용할 수 있는데 옛날 prevResult를 사용할 경우 사용할 수 있다.
+            setResult((preResult) => {
+                return "정답" + value;
+            })
             setFirst(Math.ceil(Math.random() * 9));
             setSecond(Math.ceil(Math.random() * 9));
             setValue("");
