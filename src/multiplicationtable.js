@@ -2,7 +2,7 @@ import React from 'react';
 import ReactDOM from 'react-dom';//react 코드를 웹에다가 붙여주는 코드
 import './index.css';
 //hooks로 변경하기
-const GuGuDanHooks = () => {
+const GuGuDan = () => {
     //setstate만드는 방법
     const [first,  setFirst] = React.useState(Math.ceil(Math.random() * 9));
     const [second,  setSecond] = React.useState(Math.ceil(Math.random() * 9));
@@ -15,8 +15,8 @@ const GuGuDanHooks = () => {
     }
 
     const  onSubmitForm = (e) => {
-        e.preventDefault;
-        if(parseInt(this.state.value) === this.state.first * this.state.second){
+        e.preventDefault();
+        if(parseInt(value) === first * second){
             setResult("정답 : " + value);
             setFirst(Math.ceil(Math.random() * 9));
             setSecond(Math.ceil(Math.random() * 9));
@@ -33,8 +33,8 @@ const GuGuDanHooks = () => {
     return (
         <>
             <div>{first} 곱하기 {second}</div>
-            <form onSubmit={onChageInput}>
-                <input ref={inputRef} value={value}/>
+            <form onSubmit={onSubmitForm}>
+                <input ref={inputRef} onChange={onChageInput} value={value}/>
                 <button>입력</button>
             </form>
             <div id="result">{result}</div>
